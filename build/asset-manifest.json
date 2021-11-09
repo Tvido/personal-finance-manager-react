@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d518f6ce.chunk.css",
-    "main.js": "/static/js/main.638d6939.chunk.js",
-    "main.js.map": "/static/js/main.638d6939.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.086a9244.js",
-    "runtime-main.js.map": "/static/js/runtime-main.086a9244.js.map",
-    "static/css/2.c8956ef5.chunk.css": "/static/css/2.c8956ef5.chunk.css",
-    "static/js/2.71d7fefc.chunk.js": "/static/js/2.71d7fefc.chunk.js",
-    "static/js/2.71d7fefc.chunk.js.map": "/static/js/2.71d7fefc.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.c8956ef5.chunk.css.map": "/static/css/2.c8956ef5.chunk.css.map",
-    "static/css/main.d518f6ce.chunk.css.map": "/static/css/main.d518f6ce.chunk.css.map",
-    "static/js/2.71d7fefc.chunk.js.LICENSE.txt": "/static/js/2.71d7fefc.chunk.js.LICENSE.txt"
+    "main.css": "/personal-finance-manager-react/static/css/main.d518f6ce.chunk.css",
+    "main.js": "/personal-finance-manager-react/static/js/main.638d6939.chunk.js",
+    "main.js.map": "/personal-finance-manager-react/static/js/main.638d6939.chunk.js.map",
+    "runtime-main.js": "/personal-finance-manager-react/static/js/runtime-main.af688008.js",
+    "runtime-main.js.map": "/personal-finance-manager-react/static/js/runtime-main.af688008.js.map",
+    "static/css/2.c8956ef5.chunk.css": "/personal-finance-manager-react/static/css/2.c8956ef5.chunk.css",
+    "static/js/2.71d7fefc.chunk.js": "/personal-finance-manager-react/static/js/2.71d7fefc.chunk.js",
+    "static/js/2.71d7fefc.chunk.js.map": "/personal-finance-manager-react/static/js/2.71d7fefc.chunk.js.map",
+    "index.html": "/personal-finance-manager-react/index.html",
+    "static/css/2.c8956ef5.chunk.css.map": "/personal-finance-manager-react/static/css/2.c8956ef5.chunk.css.map",
+    "static/css/main.d518f6ce.chunk.css.map": "/personal-finance-manager-react/static/css/main.d518f6ce.chunk.css.map",
+    "static/js/2.71d7fefc.chunk.js.LICENSE.txt": "/personal-finance-manager-react/static/js/2.71d7fefc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.086a9244.js",
+    "static/js/runtime-main.af688008.js",
     "static/css/2.c8956ef5.chunk.css",
     "static/js/2.71d7fefc.chunk.js",
     "static/css/main.d518f6ce.chunk.css",
