@@ -37,7 +37,6 @@ export const CategoriesTable = () => {
               <td>{description}</td>
               <td>
                 <button type="button"
-                  // onClick={() => {}}
                   onClick={() => onDeleteTransaction(_id)}
                 >
                   X

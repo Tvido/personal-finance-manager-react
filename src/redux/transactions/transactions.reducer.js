@@ -15,11 +15,6 @@ const items = createReducer([], {
     state.filter(transaction => transaction._id !== payload),
 });
 
-const summary = createReducer([], {
-  [transactionsActions.transactionsSummarySuccess]: (_, { payload }) =>
-    payload.summary.sort((a, b) => a.year - b.year || a.month - b.month),
-});
-
 const isLoadingAction = action =>
   action.type.startsWith('transactions') && action.type.endsWith('Request');
 
@@ -33,26 +28,7 @@ const loading = createReducer(false, builder => {
     .addMatcher(isEndLoadingAction, () => false);
 });
 
-const filter = createReducer('', {
-  [transactionsActions.filterTransactions]: (_, { payload }) => payload,
-});
-
-const date = new Date();
-const month = createReducer(date.getMonth() + 1, {
-  [transactionsActions.fetchTransactionsSuccess]: (_, { payload }) =>
-    payload.month,
-});
-
-const year = createReducer(date.getFullYear(), {
-  [transactionsActions.fetchTransactionsSuccess]: (_, { payload }) =>
-    payload.year,
-});
-
 export const transactionsReducer = combineReducers({
   items,
-  month,
-  year,
-  summary,
-  filter,
   loading,
 });

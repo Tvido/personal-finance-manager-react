@@ -15,7 +15,7 @@ export const TransactionsTable = () => {
   const transactions = useSelector(
     transactionsSelectors.getAllTransactions
   )
-
+console.log(transactions)
 
   const onDeleteTransaction = useCallback(
     id => dispatch(transactionsOperations.deleteTransaction(id)),
@@ -45,7 +45,6 @@ export const TransactionsTable = () => {
               <td>{description}</td>
               <td>
                 <button type="button"
-                  // onClick={() => {}}
                   onClick={() => onDeleteTransaction(_id)}
                 >
                   X
