@@ -1,0 +1,20 @@
+.nav_link {
+  box-sizing: border-box;
+  margin: 8px;
+  padding: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(88, 88, 88);
+}
+
+.nav_link:focus,
+.nav_link:hover {
+  cursor: pointer;
+  // color: #212222;
+}
+
+.nav_link__active {
+  color: #37a1d3;
+}

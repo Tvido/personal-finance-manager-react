@@ -1,29 +1,29 @@
 import React, { useCallback, useSelector } from "react";
-import { useDispatch } from "react-redux";
-// import db from './db.json'
+// import { useDispatch } from "react-redux";
+import db from '../db.json'
 import moment from "moment";
 
-import {
-  transactionsOperations,
-  transactionsSelectors
-} from "../../redux/transactions";
+// import {
+//   transactionsOperations,
+//   transactionsSelectors
+// } from "../../redux/transactions";
 
 export const TransactionsTable = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const transactions = useSelector(
-    transactionsSelectors.getAllTransactions()
-  )
+  // const transactions = useSelector(
+  //   transactionsSelectors.getAllTransactions()
+  // )
 
 
-  const onDeleteTransaction = useCallback(
-    id => dispatch(transactionsOperations.deleteTransaction(id)),
-    [dispatch],
-  );
+  // const onDeleteTransaction = useCallback(
+  //   id => dispatch(transactionsOperations.deleteTransaction(id)),
+  //   [dispatch],
+  // );
 
   return (
-    <>
-      <table>
+    <div className="container">
+      <table className="table">
         <thead>
           <tr>
             <th>Категорiя</th>
@@ -35,7 +35,7 @@ export const TransactionsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map(({ _id, category, operationType, amount, datetime, description }) => (
+          {db.map(({ _id, category, operationType, amount, datetime, description }) => (
             <tr key={_id}>
               <td>{category}</td>
               <td>{operationType}</td>
@@ -43,7 +43,10 @@ export const TransactionsTable = () => {
               <td>{moment(datetime).format("DD.MM.YYYY")}</td>
               <td>{description}</td>
               <td>
-                <button type="button" onClick={() => onDeleteTransaction(_id)}>
+                <button type="button"
+                  onClick={() => {}}
+                  // onClick={() => onDeleteTransaction(_id)}
+                >
                   X
                 </button>
               </td>
@@ -51,7 +54,7 @@ export const TransactionsTable = () => {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

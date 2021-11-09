@@ -1,9 +1,10 @@
 import axios from 'axios';
+// const result = dotenv.config();
 import queryString from 'query-string';
 import { transactionsActions } from '../transactions';
 
-axios.defaults.baseURL = process.env.SERVER_URL;
-// axios.defaults.baseURL = `${process.env.SERVER_URL}/api`;
+axios.defaults.baseURL = 'https://personal-finance-manager-api.herokuapp.com';
+// axios.defaults.baseURL = process.env.SERVER_URL;
 
 export const fetchTransactions = query => async dispatch => {
   dispatch(transactionsActions.fetchTransactionsRequest());

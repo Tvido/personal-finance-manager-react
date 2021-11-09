@@ -1,29 +1,29 @@
 import React, { useCallback, useSelector } from "react";
-import { useDispatch } from "react-redux";
-// import db from './db.json'
+// import { useDispatch } from "react-redux";
+import db from '../db.json'
 
-import {
-  transactionsOperations,
-  transactionsSelectors,
-} from "../../redux/transactions";
+// import {
+//   transactionsOperations,
+//   transactionsSelectors,
+// } from "../../redux/transactions";
 
 
 export const CategoriesTable = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-   const transactions = useSelector(
-    transactionsSelectors.getAllTransactions()
-  )
+  //  const transactions = useSelector(
+  //   transactionsSelectors.getAllTransactions()
+  // )
 
 
-  const onDeleteTransaction = useCallback(
-    id => dispatch(transactionsOperations.deleteTransaction(id)),
-    [dispatch],
-  );
+  // const onDeleteTransaction = useCallback(
+  //   id => dispatch(transactionsOperations.deleteTransaction(id)),
+  //   [dispatch],
+  // );
 
   return (
-    <>
-      <table>
+    <div className="container">
+      <table className="table">
         <thead>
           <tr>
             <th>Назва</th>
@@ -32,12 +32,15 @@ export const CategoriesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map(({ _id, category, description }) => (
+          {db.map(({ _id, category, description }) => (
             <tr key={_id}>
               <td>{category}</td>
               <td>{description}</td>
               <td>
-                <button type="button" onClick={() => onDeleteTransaction(_id)}>
+                <button type="button"
+                  onClick={() => {}}
+                  // onClick={() => onDeleteTransaction(_id)}
+                >
                   X
                 </button>
               </td>
@@ -46,7 +49,7 @@ export const CategoriesTable = () => {
 
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

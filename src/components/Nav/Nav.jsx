@@ -12,21 +12,24 @@ const Nav = () => (
     <>
       <header>
         <nav>
-          <NavLink
+          <NavLink className="nav_link"
+          activeClassName="nav_link__active"
             exact
             to={routes.home}
           >
             Home
           </NavLink>
 
-          <NavLink
+          <NavLink className="nav_link"
+          activeClassName="nav_link__active"
             exact
             to={routes.categories}
           >
             Категорії
           </NavLink>
 
-          <NavLink
+          <NavLink className="nav_link"
+          activeClassName="nav_link__active"
             exact
             to={routes.transactions}
           >
