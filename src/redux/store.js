@@ -1,58 +1,57 @@
 import {
   configureStore,
   // combineReducers,
-  getDefaultMiddleware,
+  // getDefaultMiddleware,
 } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+// import logger from 'redux-logger';
+// import {
+//   persistStore,
+//   persistReducer,
+//   FLUSH,
+//   REHYDRATE,
+//   PAUSE,
+//   PERSIST,
+//   PURGE,
+//   REGISTER,
+// } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
 import { transactionsReducer } from './transactions/transactions.reducer';
 
-const transactionsPersistConfig = {
-  key: 'transactions',
-  storage,
-  whitelist: ['token', 'isAuthenticated'],
-};
+// console.log(transactionsReducer);
 
-const tmpMiddleware = store => next => action => {
-  next(action);
-};
+// const middleware = [
+// ...getDefaultMiddleware({
+//   serializableCheck: {
+//     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//   },
+// }),
+// tmpMiddleware,
+//   logger,
+// ];
 
-const middleware = [
-  ...getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
-  tmpMiddleware,
-  logger,
-];
+export const store = configureStore({
+  reducer: {
+    transactions: transactionsReducer,
+  },
+  // middleware,
+  devTools: process.env.NODE_ENV === 'development',
+});
+// const transactionsPersistConfig = {
+//   key: 'transactions',
+//   storage,
+//   whitelist: ['token', 'isAuthenticated'],
+// };
+
+// const tmpMiddleware = store => next => action => {
+//   next(action);
+// };
 
 // const rootReducer = combineReducers({
 //   transactions: persistReducer(persistConfig, transactionsReducer),
 // });
 
 // const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-export const store = configureStore({
-  reducer: {
-    transactions: persistReducer(transactionsPersistConfig, transactionsReducer),
-  },
-  middleware,
-
-  devTools: process.env.NODE_ENV === 'development',
-});
-
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);
 
 // const reduxStore = {
 //   store,

@@ -6,11 +6,11 @@ export const getFilter = state => state.transactions.filter;
 
 export const getAllTransactions = state => state.transactions.items;
 
-export const getTotalTransactionsCount = state => {
-  const transactions = getAllTransactions(state);
+// export const getTotalTransactionsCount = state => {
+//   const transactions = getAllTransactions(state);
 
-  return transactions.length;
-};
+//   return transactions.length;
+// };
 
 export const getVisibleTransactions = createSelector(
   [getAllTransactions, getFilter],

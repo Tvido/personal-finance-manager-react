@@ -71,8 +71,8 @@ const AddTransaction = () => {
   );
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <form  className="form" onSubmit={handleSubmit}>
         <input type="text"
           name="category"
           value={category}
@@ -117,7 +117,7 @@ const AddTransaction = () => {
 
 
 
-        <button type="submit">
+        <button className="btn" type="submit">
           Додати
         </button>
       </form>

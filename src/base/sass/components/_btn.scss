@@ -1,0 +1,17 @@
+.btn {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0 50px;
+  color: rgb(68, 69, 73);
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #f6f7fc;
+  border-radius: 16px;
+  background-color: inherit;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: rgba(189, 189, 189, 0.582);
+}

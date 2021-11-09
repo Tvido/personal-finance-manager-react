@@ -1,25 +1,26 @@
-import React, { useCallback, useSelector } from "react";
-// import { useDispatch } from "react-redux";
-import db from '../db.json'
+import React, { useCallback  } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 
-// import {
-//   transactionsOperations,
-//   transactionsSelectors
-// } from "../../redux/transactions";
+import {
+  transactionsOperations,
+  transactionsSelectors
+} from "../../redux/transactions";
+
 
 export const TransactionsTable = () => {
-  // const dispatch = useDispatch();
-
-  // const transactions = useSelector(
-  //   transactionsSelectors.getAllTransactions()
-  // )
+  const dispatch = useDispatch();
 
 
-  // const onDeleteTransaction = useCallback(
-  //   id => dispatch(transactionsOperations.deleteTransaction(id)),
-  //   [dispatch],
-  // );
+  const transactions = useSelector(
+    transactionsSelectors.getAllTransactions
+  )
+
+
+  const onDeleteTransaction = useCallback(
+    id => dispatch(transactionsOperations.deleteTransaction(id)),
+    [dispatch],
+  );
 
   return (
     <div className="container">
@@ -35,7 +36,7 @@ export const TransactionsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {db.map(({ _id, category, operationType, amount, datetime, description }) => (
+          {transactions.map(({ _id, category, operationType, amount, datetime, description }) => (
             <tr key={_id}>
               <td>{category}</td>
               <td>{operationType}</td>
@@ -44,8 +45,8 @@ export const TransactionsTable = () => {
               <td>{description}</td>
               <td>
                 <button type="button"
-                  onClick={() => {}}
-                  // onClick={() => onDeleteTransaction(_id)}
+                  // onClick={() => {}}
+                  onClick={() => onDeleteTransaction(_id)}
                 >
                   X
                 </button>
